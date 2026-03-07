@@ -10,8 +10,16 @@ export default function Navbar() {
     const isEn = i18n.language?.startsWith('en');
 
     const toggleLang = () => {
-        const next = isEn ? 'nl' : 'en';
-        i18n.changeLanguage(next);
+        const langs = ['en', 'nl', 'de'];
+        const current = i18n.language?.split('-')[0] || 'en';
+        const currentIndex = langs.indexOf(current);
+        const nextIndex = (currentIndex + 1) % langs.length;
+        i18n.changeLanguage(langs[nextIndex]);
+    };
+
+    const getCurrentLang = () => {
+        const lang = i18n.language?.split('-')[0] || 'en';
+        return lang.toUpperCase();
     };
 
     return (
@@ -23,8 +31,9 @@ export default function Navbar() {
         >
             <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
                 {/* Logo */}
-                <a href="#" className="font-display font-bold text-xl text-gradient tracking-tight">
-                    {personalInfo.name}
+                <a href="#" className="font-display font-bold text-[10px] sm:text-xs tracking-[0.3em] uppercase group">
+                    <span className="text-white/40 group-hover:text-white/60 transition-colors uppercase">{t('hero.greeting')}</span>
+                    <span className="text-accent-cyan ml-2 drop-shadow-[0_0_8px_rgba(0,229,255,0.3)] uppercase">{personalInfo.name}</span>
                 </a>
 
                 {/* Desktop links */}
@@ -39,19 +48,18 @@ export default function Navbar() {
                         </a>
                     ))}
 
-                    {/* Language toggle pill */}
+                    {/* Language toggle button */}
                     <button
                         onClick={toggleLang}
-                        className="relative flex items-center w-16 h-8 rounded-full bg-dark-700 border border-white/10 cursor-pointer overflow-hidden transition-colors hover:border-accent-cyan/30"
-                        aria-label={`Switch to ${isEn ? 'Dutch' : 'English'}`}
+                        className="relative flex items-center px-3 h-8 rounded-full bg-dark-700 border border-white/10 cursor-pointer transition-colors hover:border-accent-cyan/40 hover:bg-dark-600 group"
+                        aria-label="Toggle language"
                     >
-                        <motion.div
-                            className="absolute w-7 h-6 rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet"
-                            animate={{ x: isEn ? 3 : 29 }}
-                            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                        />
-                        <span className="relative z-10 w-1/2 text-center text-xs font-semibold">EN</span>
-                        <span className="relative z-10 w-1/2 text-center text-xs font-semibold">NL</span>
+                        <span className="text-[10px] font-bold text-accent-cyan mr-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                            {getCurrentLang() === 'EN' ? '🇬🇧' : getCurrentLang() === 'DE' ? '🇩🇪' : '🇳🇱'}
+                        </span>
+                        <span className="text-xs font-bold text-white/90">
+                            {getCurrentLang()}
+                        </span>
                     </button>
                 </div>
 
@@ -87,10 +95,13 @@ export default function Navbar() {
                                 </a>
                             ))}
                             <button
-                                onClick={() => { toggleLang(); setOpen(false); }}
-                                className="mt-2 self-start px-4 py-2 rounded-full text-xs font-semibold bg-dark-700 border border-white/10 hover:border-accent-cyan/30 transition-colors"
+                                onClick={() => { toggleLang(); }}
+                                className="mt-2 self-start px-4 py-2 rounded-full text-xs font-semibold bg-dark-700 border border-white/10 hover:border-accent-cyan/30 transition-colors flex items-center gap-2"
                             >
-                                {isEn ? '🇳🇱 NL' : '🇬🇧 EN'}
+                                <span className="text-base">
+                                    {getCurrentLang() === 'EN' ? '🇬🇧' : getCurrentLang() === 'DE' ? '🇩🇪' : '🇳🇱'}
+                                </span>
+                                <span>{getCurrentLang()}</span>
                             </button>
                         </div>
                     </motion.div>

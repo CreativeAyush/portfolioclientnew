@@ -21,7 +21,8 @@ export default function Experience() {
 
             <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent-cyan/30 via-accent-violet/20 to-transparent" />
+                {/* Timeline line */}
+                <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-cyan/20 to-transparent" />
 
                 {experiences.map((exp, i) => (
                     <motion.div
@@ -41,8 +42,8 @@ export default function Experience() {
 
                         {/* Card */}
                         <motion.div
-                            className="ml-10 md:ml-0 md:w-1/2 glass p-6 hover:border-white/10 transition-all duration-300"
-                            whileHover={{ scale: 1.02 }}
+                            className="ml-10 md:ml-0 md:w-[calc(50%-2rem)] glass p-7 hover:border-accent-cyan/30 transition-all duration-500 shadow-xl"
+                            whileHover={{ y: -5, scale: 1.01 }}
                         >
                             <div className="flex items-start justify-between mb-2">
                                 <div>

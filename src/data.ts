@@ -5,8 +5,10 @@ import {
     SiDatabricks,
     SiDbt,
     SiTalend,
+    SiGit,
 } from 'react-icons/si';
-import { TbSql, TbCloud, TbApi, TbTransform, TbDatabaseCog, TbBrandDatabricks } from 'react-icons/tb';
+import { TbSql, TbCloud, TbApi, TbTransform, TbDatabaseCog, TbBrandDatabricks, TbHierarchy, TbShieldCheck, TbChartDots, TbClock, TbLink, TbCloudUpload, TbAdjustmentsHorizontal, TbSearch, TbDatabaseSearch, TbExternalLink } from 'react-icons/tb';
+import { HiOutlineDatabase, HiOutlineShieldCheck, HiOutlineViewGrid, HiOutlineCube, HiOutlineRefresh, HiOutlineCode, HiAcademicCap, HiBadgeCheck } from 'react-icons/hi';
 import type { IconType } from 'react-icons';
 
 /* ─── Types ─── */
@@ -14,7 +16,7 @@ export interface Skill {
     name: string;
     icon: IconType;
     color: string;
-    category: 'cloud' | 'data' | 'devops' | 'language';
+    category: 'cloud' | 'data_eng' | 'data_arch' | 'devops' | 'governance' | 'language_int';
 }
 
 export interface OrbitSkill extends Skill {
@@ -46,11 +48,13 @@ export interface Education {
     institution: string;
     period: string;
     score: string;
+    link?: string;
 }
 
 export interface Certification {
     name: string;
     issuer: string;
+    link?: string;
 }
 
 /* ─── Personal ─── */
@@ -66,19 +70,46 @@ export const personalInfo = {
 
 /* ─── Skills ─── */
 export const skills: Skill[] = [
-    { name: 'Python', icon: SiPython, color: '#3776AB', category: 'language' },        // 0
-    { name: 'Spark', icon: SiApachespark, color: '#E25A1C', category: 'data' },         // 1
-    { name: 'PySpark', icon: SiApachespark, color: '#F7931E', category: 'data' },       // 2
-    { name: 'ETL', icon: TbTransform, color: '#00D4AA', category: 'data' },             // 3
-    { name: 'Databricks', icon: SiDatabricks, color: '#FF3621', category: 'data' },     // 4
-    { name: 'Fabric', icon: TbDatabaseCog, color: '#0078D4', category: 'cloud' },       // 5
-    { name: 'DBT', icon: SiDbt, color: '#FF694B', category: 'data' },                   // 6
-    { name: 'SQL', icon: TbSql, color: '#e38c00', category: 'language' },               // 7
-    { name: 'SparkSQL', icon: TbSql, color: '#E25A1C', category: 'data' },              // 8
-    { name: 'APIs', icon: TbApi, color: '#6C63FF', category: 'language' },              // 9
-    { name: 'Talend', icon: SiTalend, color: '#1675BC', category: 'data' },             // 10
-    { name: 'Azure', icon: TbCloud, color: '#0078D4', category: 'cloud' },              // 11
-    { name: 'AWS', icon: SiAmazonwebservices, color: '#FF9900', category: 'cloud' },    // 12
+    // Cloud Platforms
+    { name: 'Azure', icon: TbCloud, color: '#0078D4', category: 'cloud' },
+    { name: 'Microsoft Fabric', icon: TbDatabaseCog, color: '#0078D4', category: 'cloud' },
+    { name: 'AWS', icon: SiAmazonwebservices, color: '#FF9900', category: 'cloud' },
+
+    // Data Engineering
+    { name: 'Databricks', icon: SiDatabricks, color: '#FF3621', category: 'data_eng' },
+    { name: 'Spark', icon: SiApachespark, color: '#E25A1C', category: 'data_eng' },
+    { name: 'PySpark', icon: SiApachespark, color: '#F7931E', category: 'data_eng' },
+    { name: 'DBT', icon: SiDbt, color: '#FF694B', category: 'data_eng' },
+    { name: 'ETL', icon: TbTransform, color: '#00D4AA', category: 'data_eng' },
+    { name: 'SparkSQL', icon: TbSql, color: '#E25A1C', category: 'data_eng' },
+    { name: 'Talend', icon: SiTalend, color: '#1675BC', category: 'data_eng' },
+    { name: 'Delta Lake', icon: HiOutlineDatabase, color: '#00ADD8', category: 'data_eng' },
+
+    // Data Architecture
+    { name: 'Lakehouse Architecture', icon: HiOutlineViewGrid, color: '#6366F1', category: 'data_arch' },
+    { name: 'Medallion Architecture', icon: TbHierarchy, color: '#8B5CF6', category: 'data_arch' },
+    { name: 'Dimensional Modeling', icon: HiOutlineCube, color: '#EC4899', category: 'data_arch' },
+    { name: 'Data Governance', icon: TbShieldCheck, color: '#10B981', category: 'data_arch' },
+    { name: 'Data Lineage', icon: TbChartDots, color: '#F59E0B', category: 'data_arch' },
+
+    // DevOps & Automation
+    { name: 'CI/CD', icon: TbCloudUpload, color: '#3B82F6', category: 'devops' },
+    { name: 'Azure DevOps', icon: TbCloud, color: '#0078D4', category: 'devops' },
+    { name: 'Git', icon: SiGit, color: '#F05032', category: 'devops' },
+    { name: 'Multi-Environment Deployment', icon: TbAdjustmentsHorizontal, color: '#6366F1', category: 'devops' },
+
+    // Governance & Monitoring
+    { name: 'Unity Catalog', icon: TbSearch, color: '#FF3621', category: 'governance' },
+    { name: 'Microsoft Purview', icon: TbDatabaseSearch, color: '#0078D4', category: 'governance' },
+    { name: 'Data Quality', icon: HiOutlineShieldCheck, color: '#10B981', category: 'governance' },
+    { name: 'Lakehouse Monitoring', icon: TbClock, color: '#F59E0B', category: 'governance' },
+
+    // Languages & Integration
+    { name: 'Python', icon: SiPython, color: '#3776AB', category: 'language_int' },
+    { name: 'SQL', icon: TbSql, color: '#E38C00', category: 'language_int' },
+    { name: 'APIs', icon: TbApi, color: '#6C63FF', category: 'language_int' },
+    { name: 'ADLS Gen2', icon: HiOutlineDatabase, color: '#0078D4', category: 'language_int' },
+    { name: 'IoT Hub', icon: TbLink, color: '#0078D4', category: 'language_int' },
 ];
 
 /* ─── Orbit config (skills that revolve around photo) ─── */
@@ -111,6 +142,8 @@ export const experiences: Experience[] = [
             'exp.hexaview.b1',
             'exp.hexaview.b2',
             'exp.hexaview.b3',
+            'exp.hexaview.b4',
+            'exp.hexaview.b5',
         ],
     },
     {
@@ -124,6 +157,10 @@ export const experiences: Experience[] = [
             'exp.celebal.b1',
             'exp.celebal.b2',
             'exp.celebal.b3',
+            'exp.celebal.b4',
+            'exp.celebal.b5',
+            'exp.celebal.b6',
+            'exp.celebal.b7',
         ],
     },
 ];
@@ -193,23 +230,25 @@ export const education: Education[] = [
         institution: 'Guru Gobind Singh Indraprastha University, Delhi',
         period: '2021 – 2023',
         score: '89.7%',
+        link: 'https://example.com/masters-degree', // Placeholder for actual degree link
     },
     {
         degree: 'Bachelor of Vocational Studies in Software Development',
         institution: 'Guru Gobind Singh Indraprastha University, Delhi',
         period: '2018 – 2021',
         score: '88.5%',
+        link: 'https://example.com/bachelors-degree', // Placeholder
     },
 ];
 
 /* ─── Certifications ─── */
 export const certifications: Certification[] = [
-    { name: 'Databricks Lakehouse Fundamentals', issuer: 'Databricks' },
-    { name: 'Databricks Data Engineer Professional', issuer: 'Databricks' },
-    { name: 'Azure Data Engineer Associate (DP-203)', issuer: 'Microsoft' },
-    { name: 'Azure Fundamentals (AZ-900)', issuer: 'Microsoft' },
-    { name: 'Azure Data Fundamentals (DP-900)', issuer: 'Microsoft' },
-    { name: 'Fabric Data Engineer Associate (DP-700)', issuer: 'Microsoft' },
+    { name: 'Databricks Lakehouse Fundamentals', issuer: 'Databricks', link: 'https://example.com/certs/databricks-fundamentals' },
+    { name: 'Databricks Data Engineer Professional', issuer: 'Databricks', link: 'https://example.com/certs/databricks-professional' },
+    { name: 'Azure Data Engineer Associate (DP-203)', issuer: 'Microsoft', link: 'https://example.com/certs/azure-de' },
+    { name: 'Azure Fundamentals (AZ-900)', issuer: 'Microsoft', link: 'https://example.com/certs/azure-az900' },
+    { name: 'Azure Data Fundamentals (DP-900)', issuer: 'Microsoft', link: 'https://example.com/certs/azure-dp900' },
+    { name: 'Fabric Data Engineer Associate (DP-700)', issuer: 'Microsoft', link: 'https://example.com/certs/fabric-de' },
 ];
 
 /* ─── Nav links ─── */
@@ -224,6 +263,9 @@ export const navLinks = [
 /* ─── Skill categories for the Skills section ─── */
 export const skillCategories = [
     { key: 'skills.cat.cloud', category: 'cloud' as const },
-    { key: 'skills.cat.data', category: 'data' as const },
-    { key: 'skills.cat.language', category: 'language' as const },
+    { key: 'skills.cat.data_eng', category: 'data_eng' as const },
+    { key: 'skills.cat.data_arch', category: 'data_arch' as const },
+    { key: 'skills.cat.devops', category: 'devops' as const },
+    { key: 'skills.cat.governance', category: 'governance' as const },
+    { key: 'skills.cat.language_int', category: 'language_int' as const },
 ];

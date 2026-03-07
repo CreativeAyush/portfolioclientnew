@@ -47,44 +47,68 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-12 overflow-hidden"
+            className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-12 overflow-hidden"
         >
             <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24">
                 {/* Left: Text + CTA — Always centered across breakpoints for better balance */}
                 <motion.div
-                    className="text-center max-w-2xl flex-1 z-10"
+                    className="text-center max-w-3xl flex-1 z-10"
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.7 }}
                 >
-                    <p className="text-accent-cyan/70 text-sm md:text-base font-semibold tracking-[0.25em] uppercase mb-3">
-                        {t('hero.greeting')}
-                    </p>
-                    <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">
-                        <span className="text-gradient">{personalInfo.name}</span>
-                    </h1>
-                    <h2 className="text-xl sm:text-3xl font-display font-semibold text-white/85 mb-5">
-                        {t('hero.title')}
-                    </h2>
-                    <p className="text-white/50 text-sm sm:text-lg leading-relaxed max-w-lg mx-auto mb-8 lg:mb-10">
-                        {t('hero.subtitle')}
-                    </p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="mb-8"
+                    >
+                        <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-[1.4] tracking-tight text-gradient drop-shadow-2xl max-w-[540px] mx-auto">
+                            {t('hero.title')}
+                        </h1>
+                    </motion.div>
 
-                    {/* CTA Buttons — centered justify-center */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="/resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-primary text-base px-8 py-3.5"
-                        >
-                            <HiEye className="text-xl" />
-                            {t('hero.cta.resume')}
-                        </a>
-                        <a href="#contact" className="btn-outline text-base px-8 py-3.5">
-                            <HiMail className="text-xl" />
-                            {t('hero.cta.contact')}
-                        </a>
+                    <div className="space-y-8">
+                        <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-[540px] mx-auto font-medium text-center">
+                            {t('hero.subtitle_main')}
+                        </p>
+
+                        {/* Expertise Tags */}
+                        <div className="flex flex-col items-center gap-4">
+                            <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">
+                                {t('hero.expertise_label')}
+                            </span>
+                            <div className="flex flex-wrap justify-center gap-2 max-w-[450px] mx-auto">
+                                {t('hero.expertise_tags').split(', ').map((tag, idx) => (
+                                    <motion.span
+                                        key={tag}
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: 0.8 + idx * 0.05, duration: 0.4 }}
+                                        className="px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold bg-white/5 border border-white/10 text-white/70 hover:border-accent-cyan/30 hover:text-white transition-all cursor-default"
+                                    >
+                                        {tag}
+                                    </motion.span>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
+                            <a
+                                href="/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-primary"
+                            >
+                                <HiEye className="text-xl" />
+                                {t('hero.cta.resume')}
+                            </a>
+                            <a href="#contact" className="btn-outline">
+                                <HiMail className="text-xl" />
+                                {t('hero.cta.contact')}
+                            </a>
+                        </div>
                     </div>
                 </motion.div>
 

@@ -18,6 +18,10 @@ export default {
                     violetDim: '#9c64ff',
                 },
             },
+            boxShadow: {
+                'glow-cyan': '0 0 40px rgba(0, 229, 255, 0.4)',
+                'glow-cyan-dim': '0 0 25px rgba(0, 229, 255, 0.15)',
+            },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
                 display: ['Outfit', 'system-ui', 'sans-serif'],
