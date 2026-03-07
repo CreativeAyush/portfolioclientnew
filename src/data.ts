@@ -230,14 +230,14 @@ export const education: Education[] = [
         institution: 'Guru Gobind Singh Indraprastha University, Delhi',
         period: '2021 – 2023',
         score: '89.7%',
-        link: 'https://example.com/masters-degree', // Placeholder for actual degree link
+        link: 'http://www.ipu.ac.in/',
     },
     {
         degree: 'Bachelor of Vocational Studies in Software Development',
         institution: 'Guru Gobind Singh Indraprastha University, Delhi',
         period: '2018 – 2021',
         score: '88.5%',
-        link: 'https://example.com/bachelors-degree', // Placeholder
+        link: 'http://www.ipu.ac.in/',
     },
 ];
 
