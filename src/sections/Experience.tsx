@@ -10,7 +10,7 @@ export default function Experience() {
     return (
         <SectionWrapper id="experience">
             <motion.h2
-                className="font-display text-3xl sm:text-4xl font-bold text-gradient mb-12 text-center"
+                className="font-display text-3xl sm:text-4xl font-bold text-gradient mb-12 text-center mx-auto block w-fit"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}

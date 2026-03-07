@@ -25,7 +25,7 @@ export default function Contact() {
 
     return (
         <SectionWrapper id="contact">
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-gradient mb-4 text-center">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-gradient mb-4 text-center mx-auto block w-fit">
                 {t('contact.title')}
             </h2>
             <p className="text-white/50 text-center text-sm mb-10 max-w-md mx-auto">
