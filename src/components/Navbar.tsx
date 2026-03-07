@@ -83,26 +83,28 @@ export default function Navbar() {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <div className="flex flex-col gap-2 p-4">
+                        <div className="flex flex-col gap-1 p-5">
                             {navLinks.map((l) => (
                                 <a
                                     key={l.key}
                                     href={l.href}
                                     onClick={() => setOpen(false)}
-                                    className="text-sm text-white/70 hover:text-accent-cyan py-2 transition-colors"
+                                    className="text-sm font-medium text-white/70 hover:text-accent-cyan py-3 border-b border-white/5 last:border-0 transition-colors"
                                 >
                                     {t(l.key)}
                                 </a>
                             ))}
-                            <button
-                                onClick={() => { toggleLang(); }}
-                                className="mt-2 self-start px-4 py-2 rounded-full text-xs font-semibold bg-dark-700 border border-white/10 hover:border-accent-cyan/30 transition-colors flex items-center gap-2"
-                            >
-                                <span className="text-base">
-                                    {getCurrentLang() === 'EN' ? '🇬🇧' : getCurrentLang() === 'DE' ? '🇩🇪' : '🇳🇱'}
-                                </span>
-                                <span>{getCurrentLang()}</span>
-                            </button>
+                            <div className="mt-4 pt-2 flex justify-center">
+                                <button
+                                    onClick={() => { toggleLang(); }}
+                                    className="w-full py-3 rounded-xl text-xs font-bold bg-white/5 border border-white/10 hover:border-accent-cyan/30 transition-all flex items-center justify-center gap-3"
+                                >
+                                    <span className="text-lg">
+                                        {getCurrentLang() === 'EN' ? '🇬🇧' : getCurrentLang() === 'DE' ? '🇩🇪' : '🇳🇱'}
+                                    </span>
+                                    <span>{getCurrentLang()} - Change Language</span>
+                                </button>
+                            </div>
                         </div>
                     </motion.div>
                 )}

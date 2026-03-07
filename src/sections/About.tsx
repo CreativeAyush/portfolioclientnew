@@ -23,7 +23,7 @@ export default function About() {
             <div className="grid lg:grid-cols-5 gap-10 items-start">
                 {/* Left: Bio */}
                 <motion.div
-                    className="lg:col-span-3 glass-strong p-8 md:p-10"
+                    className="lg:col-span-3 glass-strong p-6 md:p-10"
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: false }}

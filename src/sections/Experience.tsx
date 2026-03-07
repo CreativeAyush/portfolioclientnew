@@ -21,7 +21,6 @@ export default function Experience() {
 
             <div className="relative">
                 {/* Timeline line */}
-                {/* Timeline line */}
                 <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent-cyan/20 to-transparent" />
 
                 {experiences.map((exp, i) => (

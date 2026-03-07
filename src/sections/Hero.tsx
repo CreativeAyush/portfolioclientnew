@@ -24,21 +24,21 @@ export default function Hero() {
     let profileSize = 170;
 
     if (isMobile) {
-        innerR = width * 0.3;
-        outerR = width * 0.5;
-        profileSize = width * 0.35;
-        // Clamp mobile sizes
-        innerR = Math.max(90, Math.min(130, innerR));
-        outerR = Math.max(160, Math.min(220, outerR));
-        profileSize = Math.max(110, Math.min(160, profileSize));
+        innerR = width * 0.28;
+        outerR = width * 0.48;
+        profileSize = width * 0.32;
+        // Clamp mobile sizes more aggressively for small screens
+        innerR = Math.max(80, Math.min(125, innerR));
+        outerR = Math.max(150, Math.min(210, outerR));
+        profileSize = Math.max(100, Math.min(150, profileSize));
     } else if (isTablet) {
-        innerR = 120;
-        outerR = 180;
-        profileSize = 140;
+        innerR = 110;
+        outerR = 170;
+        profileSize = 130;
     } else if (isSmallDesktop) {
-        innerR = 130;
-        outerR = 190;
-        profileSize = 150;
+        innerR = 125;
+        outerR = 185;
+        profileSize = 145;
     }
 
     const parallaxX = reduced ? 0 : mouse.x * 14;
