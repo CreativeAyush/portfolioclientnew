@@ -8,7 +8,7 @@
     "hero.title": "Architektur des Rückgrats moderner Datenplattformen",
     "hero.subtitle_main": "Entwicklung von Hochleistungs-Datenpipelines, Governance-Frameworks und automatisierten Deployment-Ökosystemen. Transformation komplexer Rohdaten in skalierbare Lakehouse-Lösungen in Produktionsqualität, die echten geschäftlichen Nutzen bringen.",
     "hero.expertise_label": "Spezialisiert auf",
-    "hero.expertise_tags": "Azure Databricks, Microsoft Fabric, DBT, Spark, Medallion Architecture, CI/CD, Data Governance",
+    "hero.expertise_tags": "Azure Databricks, Microsoft Fabric, DBT, Spark, Medallion Architecture, CI/CD, Data Modelling",
     "hero.cta.resume": "Lebenslauf ansehen",
     "hero.cta.contact": "Kontaktieren",
     "about.title": "Über mich",

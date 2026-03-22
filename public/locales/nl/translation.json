@@ -8,7 +8,7 @@
     "hero.title": "Architect van het fundament van moderne dataplatformen",
     "hero.subtitle_main": "Ontwerpen van hoogwaardige datapipelines, governance-frameworks en geautomatiseerde deployment-ecosystemen. Transformeren van complexe ruwe data naar schaalbare Lakehouse-oplossingen van productiekwaliteit die echte zakelijke impact maken.",
     "hero.expertise_label": "Gespecialiseerd in",
-    "hero.expertise_tags": "Azure Databricks, Microsoft Fabric, DBT, Spark, Medallion Architecture, CI/CD, Data Governance",
+    "hero.expertise_tags": "Azure Databricks, Microsoft Fabric, DBT, Spark, Medallion Architecture, CI/CD, Data Modelling",
     "hero.cta.resume": "CV bekijken",
     "hero.cta.contact": "Neem contact op",
     "about.title": "Over mij",

@@ -8,7 +8,7 @@
     "hero.title": "Architecting the Backbone of Modern Data Platforms",
     "hero.subtitle_main": "Designing high-performance data pipelines, governance frameworks, and automated deployment ecosystems. Transforming complex raw data into scalable, production-grade Lakehouse solutions that drive real business impact.",
     "hero.expertise_label": "Specialized in",
-    "hero.expertise_tags": "Azure Databricks, Microsoft Fabric, DBT, Spark, Medallion Architecture, CI/CD, Data Governance",
+    "hero.expertise_tags": "Azure Databricks, Microsoft Fabric, DBT, Spark, Medallion Architecture, CI/CD, Data Modelling",
     "hero.cta.resume": "View Resume",
     "hero.cta.contact": "Get in Touch",
     "about.title": "About Me",

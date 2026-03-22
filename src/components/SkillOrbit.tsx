@@ -85,7 +85,7 @@ function OrbitRing({
 
     return (
         <motion.div
-            className="absolute inset-0"
+            className="absolute inset-0 pointer-events-none"
             animate={{ rotate: direction === 1 ? 360 : -360 }}
             transition={
                 duration > 0
@@ -114,6 +114,7 @@ function OrbitRing({
                             skill={skill}
                             x={x}
                             y={y}
+                            angle={angle}
                             direction={direction}
                             isActive={isActive}
                             onHover={onHover}
@@ -130,26 +131,32 @@ interface SkillIconProps {
     skill: OrbitSkill;
     x: number;
     y: number;
+    angle: number;
     direction: 1 | -1;
     isActive: boolean;
     onHover: (name: string | null) => void;
 }
 
-function SkillIcon({ skill, x, y, direction, isActive, onHover }: SkillIconProps) {
+function SkillIcon({ skill, x, y, angle, direction, isActive, onHover }: SkillIconProps) {
     const Icon = skill.icon;
+    const distanceX = 45 * Math.cos(angle);
+    const distanceY = 45 * Math.sin(angle);
+    const tooltipX = 22 + distanceX;
+    const tooltipY = 22 + distanceY;
 
     const handleFocus = useCallback(() => onHover(skill.name), [onHover, skill.name]);
     const handleBlur = useCallback(() => onHover(null), [onHover]);
 
     return (
         <motion.button
-            className="absolute flex items-center justify-center w-11 h-11 rounded-full bg-dark-800/80 border border-white/10 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan"
+            className="absolute flex items-center justify-center w-11 h-11 rounded-full bg-dark-800/80 border border-white/10 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan pointer-events-auto"
             style={{
                 left: x,
                 top: y,
                 color: skill.color,
                 // Counter-rotate to keep icon upright
                 rotate: direction === 1 ? -360 : 360,
+                zIndex: isActive ? 50 : 10,
             }}
             animate={{
                 scale: isActive ? 1.4 : 1,
@@ -177,10 +184,16 @@ function SkillIcon({ skill, x, y, direction, isActive, onHover }: SkillIconProps
             {/* Tooltip */}
             {isActive && (
                 <motion.div
-                    className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 rounded-lg bg-dark-700 border border-white/10 text-xs font-medium text-white whitespace-nowrap shadow-lg"
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 }}
+                    className="absolute px-3 py-1 rounded-lg bg-dark-700 border border-white/10 text-xs font-medium text-white whitespace-nowrap shadow-lg pointer-events-none"
+                    style={{
+                        left: tooltipX,
+                        top: tooltipY,
+                        transform: 'translate(-50%, -50%)',
+                        zIndex: 100,
+                    }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
                     role="tooltip"
                 >
                     {skill.name}

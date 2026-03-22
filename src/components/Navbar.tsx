@@ -32,8 +32,7 @@ export default function Navbar() {
             <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
                 {/* Logo */}
                 <a href="#" className="font-display font-bold text-[10px] sm:text-xs tracking-[0.3em] uppercase group">
-                    <span className="text-white/40 group-hover:text-white/60 transition-colors uppercase">{t('hero.greeting')}</span>
-                    <span className="text-accent-cyan ml-2 drop-shadow-[0_0_8px_rgba(0,229,255,0.3)] uppercase">{personalInfo.name}</span>
+                    <span className="text-accent-cyan drop-shadow-[0_0_8px_rgba(0,229,255,0.3)]">{personalInfo.title}</span>
                 </a>
 
                 {/* Desktop links */}

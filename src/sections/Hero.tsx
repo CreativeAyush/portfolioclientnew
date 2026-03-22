@@ -49,7 +49,7 @@ export default function Hero() {
             id="hero"
             className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-12 overflow-hidden"
         >
-            <div className="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24">
+            <div className="w-full max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-24">
                 {/* Left: Text + CTA — Always centered across breakpoints for better balance */}
                 <motion.div
                     className="text-center max-w-3xl flex-1 z-10"
@@ -61,20 +61,23 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="mb-8"
+                        className="mb-8 flex flex-col items-center"
                     >
+                        <div className="text-white/70 text-sm sm:text-base font-medium mb-3 tracking-wide">
+                            {t('hero.greeting')} {personalInfo.name}
+                        </div>
                         <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-[1.4] tracking-tight text-gradient drop-shadow-2xl max-w-[540px] mx-auto">
                             {t('hero.title')}
                         </h1>
                     </motion.div>
 
-                    <div className="space-y-8">
-                        <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-[540px] mx-auto font-medium text-center">
+                    <div>
+                        <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-[540px] mx-auto font-medium text-center mb-8">
                             {t('hero.subtitle_main')}
                         </p>
 
                         {/* Expertise Tags */}
-                        <div className="flex flex-col items-center gap-4">
+                        <div className="flex flex-col items-center gap-4 mb-6">
                             <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">
                                 {t('hero.expertise_label')}
                             </span>
@@ -94,7 +97,7 @@ export default function Hero() {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
+                        <div className="flex flex-col sm:flex-row gap-5 justify-center">
                             <a
                                 href="/resume.pdf"
                                 target="_blank"
@@ -114,7 +117,7 @@ export default function Hero() {
 
                 {/* Right: Orbit + Profile — reactive sizing */}
                 <motion.div
-                    className="relative flex items-center justify-center flex-shrink-0"
+                    className="relative flex items-center justify-center flex-shrink-0 z-20"
                     style={{
                         x: parallaxX,
                         y: parallaxY,

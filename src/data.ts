@@ -243,12 +243,12 @@ export const education: Education[] = [
 
 /* ─── Certifications ─── */
 export const certifications: Certification[] = [
-    { name: 'Databricks Lakehouse Fundamentals', issuer: 'Databricks', link: 'https://example.com/certs/databricks-fundamentals' },
-    { name: 'Databricks Data Engineer Professional', issuer: 'Databricks', link: 'https://example.com/certs/databricks-professional' },
-    { name: 'Azure Data Engineer Associate (DP-203)', issuer: 'Microsoft', link: 'https://example.com/certs/azure-de' },
-    { name: 'Azure Fundamentals (AZ-900)', issuer: 'Microsoft', link: 'https://example.com/certs/azure-az900' },
-    { name: 'Azure Data Fundamentals (DP-900)', issuer: 'Microsoft', link: 'https://example.com/certs/azure-dp900' },
-    { name: 'Fabric Data Engineer Associate (DP-700)', issuer: 'Microsoft', link: 'https://example.com/certs/fabric-de' },
+    { name: 'Azure Fundamentals (AZ-900)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/en-in/users/deepikanegi-5310/credentials/certification/azure-fundamentals?tab=credentials-tab' },
+    { name: 'Azure Data Fundamentals (DP-900)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/api/credentials/share/en-in/DeepikaNegi-5310/8556A4C435B1A764?sharingId=' },
+    { name: 'Databricks Lakehouse Fundamentals', issuer: 'Databricks', link: 'https://credentials.databricks.com/a473769d-3a85-47f0-a6e4-b8b9dd4b87ea' },
+    { name: 'Azure Data Engineer Associate (DP-203)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/api/credentials/share/en-us/DeepikaNegi-5310/B6AFF461D0CD1490?sharingId=' },
+    { name: 'Fabric Data Engineer Associate (DP-700)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/api/credentials/share/en-us/DeepikaNegi-5310/9D35F77874E120CE?sharingId=4446AA16509708B' },
+    { name: 'Databricks Data Engineer Professional', issuer: 'Databricks', link: 'https://credentials.databricks.com/cd9b9ea0-7715-45eb-9b01-8037911c2d3e' },
 ];
 
 /* ─── Nav links ─── */
