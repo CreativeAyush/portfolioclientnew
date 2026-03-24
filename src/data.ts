@@ -114,19 +114,18 @@ export const skills: Skill[] = [
 
 /* ─── Orbit config (skills that revolve around photo) ─── */
 export const orbitSkills: OrbitSkill[] = [
-    { ...skills[0], ring: 'inner', speed: 12 },   // Python
-    { ...skills[1], ring: 'inner', speed: 12 },   // Spark
-    { ...skills[4], ring: 'inner', speed: 12 },   // Databricks
-    { ...skills[5], ring: 'inner', speed: 12 },   // Fabric
-    { ...skills[11], ring: 'inner', speed: 12 },  // Azure
-    { ...skills[12], ring: 'inner', speed: 12 },  // AWS
-    { ...skills[2], ring: 'outer', speed: 8 },    // PySpark
-    { ...skills[3], ring: 'outer', speed: 8 },    // ETL
+    { ...skills[0], ring: 'inner', speed: 12 },   // Azure
+    { ...skills[1], ring: 'inner', speed: 12 },   // Fabric
+    { ...skills[4], ring: 'inner', speed: 12 },   // Spark
+    { ...skills[11], ring: 'inner', speed: 12 },  // Lakehouse
+    { ...skills[12], ring: 'inner', speed: 12 },  // Medallion
+    { ...skills[2], ring: 'outer', speed: 8 },    // AWS
+    { ...skills[3], ring: 'outer', speed: 8 },    // Databricks
     { ...skills[6], ring: 'outer', speed: 8 },    // DBT
-    { ...skills[7], ring: 'outer', speed: 8 },    // SQL
+    { ...skills[7], ring: 'outer', speed: 8 },    // ETL
     { ...skills[8], ring: 'outer', speed: 8 },    // SparkSQL
-    { ...skills[9], ring: 'outer', speed: 8 },    // APIs
-    { ...skills[10], ring: 'outer', speed: 8 },   // Talend
+    { ...skills[9], ring: 'outer', speed: 8 },    // Talend
+    { ...skills[10], ring: 'outer', speed: 8 },   // Delta Lake
 ];
 
 /* ─── Experience ─── */
@@ -230,25 +229,25 @@ export const education: Education[] = [
         institution: 'Guru Gobind Singh Indraprastha University, Delhi',
         period: '2021 – 2023',
         score: '89.7%',
-        link: 'http://www.ipu.ac.in/',
+        link: 'https://drive.google.com/file/d/1IPuvkB3Nt4cmXPsTt6-HzHuYM3PMT2sQ/view?usp=sharing',
     },
     {
         degree: 'Bachelor of Vocational Studies in Software Development',
         institution: 'Guru Gobind Singh Indraprastha University, Delhi',
         period: '2018 – 2021',
         score: '88.5%',
-        link: 'http://www.ipu.ac.in/',
+        link: 'https://drive.google.com/file/d/1-4QRrTCpV3QssWNfYzzKpVBSBT7TJ1lH/view?usp=sharing',
     },
 ];
 
 /* ─── Certifications ─── */
 export const certifications: Certification[] = [
-    { name: 'Azure Fundamentals (AZ-900)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/en-in/users/deepikanegi-5310/credentials/certification/azure-fundamentals?tab=credentials-tab' },
-    { name: 'Azure Data Fundamentals (DP-900)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/api/credentials/share/en-in/DeepikaNegi-5310/8556A4C435B1A764?sharingId=' },
-    { name: 'Databricks Lakehouse Fundamentals', issuer: 'Databricks', link: 'https://credentials.databricks.com/a473769d-3a85-47f0-a6e4-b8b9dd4b87ea' },
+    { name: 'Databricks Data Engineer Professional', issuer: 'Databricks', link: 'https://credentials.databricks.com/cd9b9ea0-7715-45eb-9b01-8037911c2d3e' },
     { name: 'Azure Data Engineer Associate (DP-203)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/api/credentials/share/en-us/DeepikaNegi-5310/B6AFF461D0CD1490?sharingId=' },
     { name: 'Fabric Data Engineer Associate (DP-700)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/api/credentials/share/en-us/DeepikaNegi-5310/9D35F77874E120CE?sharingId=4446AA16509708B' },
-    { name: 'Databricks Data Engineer Professional', issuer: 'Databricks', link: 'https://credentials.databricks.com/cd9b9ea0-7715-45eb-9b01-8037911c2d3e' },
+    { name: 'Databricks Lakehouse Fundamentals', issuer: 'Databricks', link: 'https://credentials.databricks.com/a473769d-3a85-47f0-a6e4-b8b9dd4b87ea' },
+    { name: 'Azure Fundamentals (AZ-900)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/en-in/users/deepikanegi-5310/credentials/certification/azure-fundamentals?tab=credentials-tab' },
+    { name: 'Azure Data Fundamentals (DP-900)', issuer: 'Microsoft', link: 'https://learn.microsoft.com/api/credentials/share/en-in/DeepikaNegi-5310/8556A4C435B1A764?sharingId=' },
 ];
 
 /* ─── Nav links ─── */

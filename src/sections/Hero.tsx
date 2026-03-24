@@ -61,18 +61,18 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="mb-8 flex flex-col items-center"
+                        className="mb-3 flex flex-col items-center"
                     >
-                        <div className="text-white/70 text-sm sm:text-base font-medium mb-3 tracking-wide">
+                        <div className="text-white/90 text-base sm:text-lg font-extrabold mb-3 tracking-wide">
                             {t('hero.greeting')} {personalInfo.name}
                         </div>
-                        <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-[1.4] tracking-tight text-gradient drop-shadow-2xl max-w-[540px] mx-auto">
+                        <h1 className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold leading-[1.4] tracking-tight text-gradient drop-shadow-2xl max-w-[540px] mx-auto">
                             {t('hero.title')}
                         </h1>
                     </motion.div>
 
                     <div>
-                        <p className="text-white/60 text-sm sm:text-base leading-relaxed max-w-[540px] mx-auto font-medium text-center mb-8">
+                        <p className="text-white/60 text-xs sm:text-sm leading-relaxed max-w-[540px] mx-auto font-medium text-center mb-8">
                             {t('hero.subtitle_main')}
                         </p>
 
